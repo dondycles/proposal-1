@@ -1,6 +1,6 @@
 import { ThirdwebProvider } from "@thirdweb-dev/react";
 import "../styles/globals.css";
-import { Providers } from "./providers";
+import Providers from "./providers";
 
 // This is the chain your dApp will work on.
 // Change this to the chain your app is built for.
