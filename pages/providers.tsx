@@ -7,7 +7,7 @@ import { useThemeStore } from "../store";
 import Nav from "../components/nav";
 import SideBar from "../components/sideBar";
 
-export function Providers({ children }: { children: React.ReactNode }) {
+export default function Providers({ children }: { children: React.ReactNode }) {
   const [isHydrated, setIsHydrated] = useState(false);
   const theme = useThemeStore();
   useEffect(() => {
