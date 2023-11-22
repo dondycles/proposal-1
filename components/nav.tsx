@@ -4,8 +4,10 @@ import {
   ConnectModalInline,
   Web3Button,
 } from "@thirdweb-dev/react";
-import { FaSearch } from "react-icons/fa";
+import { FaLightbulb, FaMoon, FaSearch } from "react-icons/fa";
+import { useThemeStore } from "../store";
 export default function Nav() {
+  const theme = useThemeStore();
   return (
     <nav className="flex items-center justify-between w-full gap-2 p-2 shadow bg-foreground/20">
       <div className="flex items-center justify-center h-8 px-4 text-xs font-black rounded-lg text-primary">
@@ -24,6 +26,16 @@ export default function Nav() {
         className="px-8 text-xs font-black"
       >
         CONNECT WALLET
+      </Button>
+      <Button
+        onClick={() => {
+          theme.toggleMode(theme.mode === "dark" ? "light" : "dark");
+        }}
+        isIconOnly
+        size="sm"
+        className="text-base"
+      >
+        {theme.mode === "dark" ? <FaLightbulb /> : <FaMoon />}
       </Button>
     </nav>
   );
